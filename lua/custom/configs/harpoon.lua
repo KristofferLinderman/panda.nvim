@@ -1,52 +1,60 @@
-local harpoon = require 'harpoon'
-return {
+local M = {}
+
+function M.setup()
+  require('harpoon'):setup()
+end
+
+M.keys = {
   {
     '<leader>A',
     function()
-      harpoon:list():append()
+      require('harpoon'):list():append()
     end,
-    desc = 'Harpoon file',
+    desc = 'harpoon file',
   },
   {
     '<leader>a',
     function()
+      local harpoon = require 'harpoon'
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end,
-    desc = 'Harpoon quick menu',
+    desc = 'harpoon quick menu',
   },
   {
     '<leader>1',
     function()
-      harpoon:list():select(1)
+      require('harpoon'):list():select(1)
     end,
-    desc = 'Harpoon to file 1',
+    desc = 'harpoon to file 1',
   },
   {
     '<leader>2',
     function()
-      harpoon:list():select(2)
+      require('harpoon'):list():select(2)
     end,
-    desc = 'Harpoon to file 2',
+    desc = 'harpoon to file 2',
   },
   {
     '<leader>3',
     function()
-      harpoon:list():select(3)
+      require('harpoon'):list():select(3)
     end,
-    desc = 'Harpoon to file 3',
+    desc = 'harpoon to file 3',
   },
   {
     '<leader>4',
     function()
-      harpoon:list():select(4)
+      require('harpoon'):list():select(4)
     end,
-    desc = 'Harpoon to file 4',
+    desc = 'harpoon to file 4',
   },
   {
     '<leader>5',
     function()
-      harpoon:list():select(5)
+      require('harpoon'):list():select(5)
     end,
-    desc = 'Harpoon to file 5',
+    desc = 'harpoon to file 5',
   },
 }
+
+return M
