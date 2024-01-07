@@ -13,7 +13,7 @@ local plugins = {
         'eslint-lsp',
         'prettierd',
         'typescript-language-server',
-        'lua-language-server',
+        -- 'lua-language-server',
       },
     },
   },
@@ -60,6 +60,21 @@ local plugins = {
       require('custom.configs.harpoon').setup()
     end,
     keys = require('custom.configs.harpoon').keys,
+  },
+  {
+    'rmagatti/auto-session',
+    lazy = false,
+    config = function()
+      require('auto-session').setup {
+        log_level = 'error',
+        auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
+      }
+    end,
+  },
+  {
+    'kylechui/nvim-surround',
+    version = '*',
+    event = 'VeryLazy',
   },
 }
 
